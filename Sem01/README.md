@@ -2,13 +2,12 @@
 ## Алгоритъм
 Алгоритъм ще наричаме последователност от стъпки за решаването на даден проблем. 
 
-![image](https://github.com/user-attachments/assets/d10b77cd-ba84-42aa-a240-9e9c27f0e7bd)
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/ca69e981-2f2d-464a-98c5-36c1510d0cee">
 
 ## Структура от данни
 Структура от данни ще наричаме начин за организирането на данните в удобен за употреба формат. 
 
-![1707338627247](https://github.com/user-attachments/assets/e194fdd1-9feb-4bb2-bef3-72d45593b8a2)
-
+<img width="500" alt="image" src="https://github.com/user-attachments/assets/397fce2d-c82b-41b5-a6d9-5c34bc985815">
 
 ## Сложност
 Сложността на алгоритмите е ключов аспект в компютърните науки, който определя ефективността на алгоритъма по отношение на времето и паметта, които използва. 

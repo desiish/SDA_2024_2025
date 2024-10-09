@@ -45,7 +45,7 @@ void f(vector<int>& arr) {
     for (int i = 0; i < n; i++) {
         cout << 1;
     }
-    for (int i = 0; i < n; i *= 2) {
+    for (int i = 1; i > n; i *= 2) {
         cout << 1;
     }
 }

@@ -24,7 +24,7 @@ void f(vector<int> arr) {
 void f(vector<int>& arr) {
     int n = arr.size();
     for (int i = 0; i < n; i++) {
-        for (int j = n - i + 5; i <= n; j++)
+        for (int j = n - i + 5; j <= n; j++)
             cout << 1;
     }
 }

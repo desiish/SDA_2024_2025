@@ -2,12 +2,14 @@
 ## Стабилност
 Един алгоритъм ще наричаме **стабилен**, ако той ни гарантира, че елементите, които са равни помежду си, няма да променят позициите си един спрямо друг след сортиране, т.е. не се променя относителната наредба.
 
-![image](https://github.com/user-attachments/assets/8560c916-ddbe-4c80-9ac7-b28389694ffe)
+<img width="448" alt="image" src="https://github.com/user-attachments/assets/cda82754-edd1-43d3-9a77-7cbdb3657773">
+
 
 ## In-place
 **In-place** алгоритмите са тези алгоритми, които **НЕ** използват допълнителна памет. Един пример за такъв алгоритъм е добре познатият на всички `Bubble Sort`.
 
-![image](https://github.com/user-attachments/assets/aaa82b34-6050-478d-a276-bf1707a6fb1a)
+<img width="416" alt="image" src="https://github.com/user-attachments/assets/d2500499-3d3d-4251-865e-519140b3d367">
+
 
 ## Алгоритми за сортиране
 

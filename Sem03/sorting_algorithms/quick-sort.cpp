@@ -2,52 +2,44 @@
 using namespace std;
 
 template <class T>
-size_t partition(T* pArr, size_t len)
-{
-    if (pArr[0] > pArr[len - 1])
-        std::swap(pArr[0], pArr[len - 1]);
+int partition(T* arr, size_t size) {
+    int pivot = arr[size / 2];
+    int beg = 0, end = size - 1;
 
-    T& partitioningElement = pArr[len - 1];
-    size_t left = 0;
-    size_t right = len - 1;
-
-    while (true)
-    {
-        while (pArr[++left] < partitioningElement)
-            ;
-
-        while (pArr[--right] > partitioningElement)
-        {
-            if (left == right)
-                break;
+    while (true) {
+        while (arr[beg] < pivot) {
+            beg++;
         }
 
-        if (left >= right)
+        while (arr[end] > pivot)
+            end--;
+
+        if (beg >= end) //ако указателите ни се срещнат (разминат), брейкваме !!!
             break;
 
-        std::swap(pArr[left], pArr[right]);
+        if (arr[beg] == arr[end]) // за случаи, в които имаме повтарящи се елементи - иначе ще swap-ваме до безкрай
+            beg++;
+
+        std::swap(arr[beg], arr[end]);
     }
-
-    std::swap(pArr[left], partitioningElement);
-    return left;
+    return beg; //там ще ни стои pivot-a
 }
 
-template <typename T>
-void QuickSort(T* arr, size_t len)
-{
-    if (len <= 1)
+template <class T>
+void quickSort(T* arr, size_t size) {
+    if (size <= 1)
         return;
-    
-    size_t pivotIndex = partition(arr, len);
-    QuickSort(arr, pivotIndex);
-    QuickSort(arr + pivotIndex + 1, len - pivotIndex - 1);
+    int pIdx = partition(arr, size);
+    quickSort(arr, pIdx); // сортираме първата половина до индекса на pivot-a 
+    quickSort(arr + pIdx + 1, size - pIdx - 1); //сортираме втората половина след индекса на pivot-a 
 }
 
-const int SIZE = 15;
+
+const int SIZE = 7;
 int main()
 {
-    int arr1[] = { 15, 14, 13, 12, 11, 30, 90, 8, 7, 6, 5, 4, 3, 2, 1 };
-    QuickSort(arr1, SIZE);
+    int arr1[] = { 2, 1, 0, 9, 7, 4, 3};
+    quickSort(arr1, SIZE);
 
     for (int i = 0; i < SIZE; i++)
         cout << arr1[i] << " ";

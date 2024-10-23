@@ -219,7 +219,7 @@ RandomIt upper_bound(RandomIt beg, RandomIt end, const T& value) {
 ```
 
 ---
-## Задачи
+## Задачи :blossom:
 - [Перфектният принтер](https://www.hackerrank.com/contests/sda-homework-3/challenges/challenge-2674)
 - [Search Insert Pos](https://leetcode.com/problems/search-insert-position/)
 - [Find Minimum in Rotated Sorted Array](https://leetcode.com/problems/find-minimum-in-rotated-sorted-array/)

@@ -5,3 +5,5 @@
 - [**Тема 3:**](https://github.com/desiish/SDA_2024_2025/tree/main/Sem03) Алгоритми за сортиране.
 - [**Тема 4:**](https://github.com/desiish/SDA_2024_2025/tree/main/Sem04) Алгоритми за търсене.
 - [**Тема 5:**](https://github.com/desiish/SDA_2024_2025/tree/main/Sem05) Свързани списъци.
+- [**Тема 6:**](https://github.com/desiish/SDA_2024_2025/tree/main/Sem06) Дек, стек и опашка.
+

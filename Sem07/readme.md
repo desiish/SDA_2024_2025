@@ -94,6 +94,9 @@ BalanceFactor(n) = Height(n->left) - Height(n->left)
 
 [Добра визуализация на ротациите](https://www.programiz.com/dsa/avl-tree)
 
+<img width="767" alt="image" src="https://github.com/user-attachments/assets/150b88f3-f1ff-4e42-b25b-872b37cfede5">
+
+
 ### Самобалансиращи се BST - Red-Black
 Балансираността тук не е дефинирана чрез balance factor, а чрез редица свойства, които винаги трябва да са в сила (така наречения **инвариант**).
 

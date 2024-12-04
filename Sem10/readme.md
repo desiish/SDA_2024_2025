@@ -30,9 +30,6 @@ STL поддържа методи, които ни позволяват да р�
 
 Нека разгледаме и техните имплементации:
 ```c++
-#include <iostream>
-#include <vector>
-
 template <typename RandomIt, typename Compare>
 void heapify(RandomIt first, RandomIt last, RandomIt root, const Compare& comp) {
     size_t size = std::distance(first, last);
@@ -56,25 +53,11 @@ void heapify(RandomIt first, RandomIt last, RandomIt root, const Compare& comp) 
         rootIdx = largest;
     }
 }
+```
+Това е първата основна функция, която ще ви трябва - `heapify`.
+Тя е имплементирана на базата на bubble down принципа, като започва от най-горния елемент и разглежда дали има нарушение на правилата за heap в тройката между възела и неговите две деца. Ако има такова, намества възлите правилно и продължава надолу в посока на разместеното възелче. Използва се при `make_heap` и `pop_heap` методите.
 
-template <typename RandomIt, typename Compare = std::less<>>
-void make_heap(RandomIt first, RandomIt last, Compare comp = Compare()) {
-    size_t size = std::distance(first, last);
-
-    for (int i = (size / 2); i >= 0; --i)
-        heapify(first, last, first + i, comp);
-}
-
-template <typename RandomIt, typename Compare = std::less<>>
-void pop_heap(RandomIt first, RandomIt last, Compare comp = Compare()) {
-    size_t size = std::distance(first, last);
-
-    if (size > 1) {
-        std::swap(*first, *(last - 1));
-        heapify(first, last, first, comp);
-    }
-}
-
+```c++
 template <typename RandomIt, typename Compare>
 void bubble_up(RandomIt first, RandomIt last, const Compare& comp) {
     int childIndex = std::distance(first, last) - 1;
@@ -90,33 +73,42 @@ void bubble_up(RandomIt first, RandomIt last, const Compare& comp) {
         childIndex = parentIndex;
     }
 }
+```
 
+Това е другия алгоритъм за heap. При него подхода е обратен на предходния - тръгваме от листата и продължаваме нагоре да разглеждаме дали има rule violations по родителя на дадено възелче. Използва се за имплементиране на `push_heap` метода.  
+
+Сега да разгледаме и самите методи:
+
+```c++
+template <typename RandomIt, typename Compare = std::less<>>
+void make_heap(RandomIt first, RandomIt last, Compare comp = Compare()) {
+    size_t size = std::distance(first, last);
+
+    for (int i = (size / 2); i >= 0; --i)
+        heapify(first, last, first + i, comp);
+}
+
+```
+
+```c++
+template <typename RandomIt, typename Compare = std::less<>>
+void pop_heap(RandomIt first, RandomIt last, Compare comp = Compare()) {
+    size_t size = std::distance(first, last);
+
+    if (size > 1) {
+        std::swap(*first, *(last - 1));
+        heapify(first, last, first, comp);
+    }
+}
+```
+
+```c++
 template <typename RandomIt, typename Compare = std::less<>>
 void push_heap(RandomIt first, RandomIt last, Compare comp = Compare()) {
     size_t size = std::distance(first, last);
 
     if (size > 1)
         bubble_up(first, last, comp);
-}
-
-int main()
-{
-    std::vector<int> v = { 1, 9, 2, 5, 3, 15, 6, 98, 10 };
-
-    make_heap(v.begin(), v.end());
-
-    for (auto i : v)
-        std::cout << i << " ";
-
-    pop_heap(v.begin(), v.end());
-
-    for (auto i : v)
-        std::cout << i << " ";
-
-    push_heap(v.begin(), v.end());
-
-    for (auto i : v)
-        std::cout << i << " ";
 }
 ```
 
@@ -160,6 +152,8 @@ class priority_queue
     Comp _comp;
 
 public:
+
+// TODO: constructors
     void push(const T& value)
     {
         _c.push_back(value);
@@ -198,7 +192,19 @@ public:
 };
 ```
 
-И тук, ако искаме да създадем minHeap, трябва да подадем `std::greater<>` като custom comparator.
+Както виждаме, приоритетната опашка изисква от контейнера си да поддържа следните операции:
+- push_back()
+- pop_back()
+- front()
+- size()
+- empty()
+
+Друго не задължително, но силно препоръчително условие е да поддържа Random Access на елементите си, понеже повечето имплементации са чрез вектор и се ползват формулите за намиране на дете и родител на даден индекс. 
+
+Съответно контейнер, който би могъл да бъде използван тук, е `std::deque`.
+
+**Допълнителен пример:*
+Ако искаме да създадем minHeap, трябва да подадем `std::greater<>` като custom comparator.
 
 ### Пример за създаване на min-heap
 
@@ -221,3 +227,10 @@ int main()
 ```
 
 ---
+Задачи 😄
+1. [Last Stone Weight](https://leetcode.com/problems/last-stone-weight/description/)
+2. [Kth Largest Element in Array](https://leetcode.com/problems/kth-largest-element-in-an-array/description/)
+3. [Фитнес зала](https://www.hackerrank.com/contests/sda-test4-2022-2023-343rrsdfs/challenges/challenge-3768/problem)
+4. [Рожден ден](https://www.hackerrank.com/contests/sda-hw-8-2023/challenges/two-pqs/problem)
+5. [Merge K Sorted Linked Lists](https://leetcode.com/problems/merge-k-sorted-lists/description/)
+6. [Търчащата медиана](https://www.hackerrank.com/contests/sda-20232024-test-4/challenges/challenge-4442/problem)

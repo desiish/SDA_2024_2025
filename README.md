@@ -9,6 +9,8 @@
 - [**Тема 7:**](https://github.com/desiish/SDA_2024_2025/tree/main/Sem07) Дървета. BST, AVL, Red-Black Tree.
 - [**Тема 8:**](https://github.com/desiish/SDA_2024_2025/tree/main/Sem08) Динамично програмиране.
 - [**Тема 9:**](https://github.com/desiish/SDA_2024_2025/tree/main/Sem09) Хеш таблици.
+- [**Тема 10:**](https://github.com/desiish/SDA_2024_2025/tree/main/Sem10) Binary Heap.
+- [**Тема 11:**](https://github.com/desiish/SDA_2024_2025/tree/main/Sem11) Графи. BFS, DFS.
 
 
 

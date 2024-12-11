@@ -126,7 +126,7 @@ DFS(G = (V, E), s начален връх, visited[0...|V| - 1])
 
 ---
 Задачи 😸
-[**1. Course schedule II**](https://leetcode.com/problems/course-schedule-ii/description/)
-[**2. Shortest Path With Alternating Colors**](https://leetcode.com/problems/shortest-path-with-alternating-colors/description/)
-[**3. Път в граф**](https://www.hackerrank.com/contests/sda-hw-10-2022/challenges/challenge-2852/problem)
-[**4. Студентски празник**](https://www.hackerrank.com/contests/sda-hw-10-2022/challenges/challenge-3782)
+- [**1. Course schedule II**](https://leetcode.com/problems/course-schedule-ii/description/)
+- [**2. Shortest Path With Alternating Colors**](https://leetcode.com/problems/shortest-path-with-alternating-colors/description/)
+- [**3. Път в граф**](https://www.hackerrank.com/contests/sda-hw-10-2022/challenges/challenge-2852/problem)
+- [**4. Студентски празник**](https://www.hackerrank.com/contests/sda-hw-10-2022/challenges/challenge-3782)

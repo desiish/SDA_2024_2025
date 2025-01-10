@@ -56,5 +56,7 @@ O(V+E)
 ---
 ## Задачи
 [**1. Minimum Obstacle Removal to Reach Corner**](https://leetcode.com/problems/minimum-obstacle-removal-to-reach-corner/description/)
+
 [**2. Shortest Paths**](https://www.hackerrank.com/contests/6-20232024/challenges/shortest-paths-2/copy-from/1386711781)
+
 [**3. Network delay time**](https://leetcode.com/problems/network-delay-time/description/)
